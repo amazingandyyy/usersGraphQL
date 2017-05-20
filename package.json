@@ -25,6 +25,7 @@
     "babel-watch": "^2.0.6",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^7.0.1",
+    "husky": "^0.13.3",
     "lint-staged": "^3.4.2"
   },
   "babel": {
@@ -51,7 +52,8 @@
     ],
     "parser": "babel-eslint",
     "rules": {
-      "react/react-in-jsx-scope": 0
+      "react/react-in-jsx-scope": 0,
+      "no-console": 0
     },
     "globals": {
       "React": true
