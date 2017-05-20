@@ -1,5 +1,5 @@
 {
-  "name": "users",
+  "name": "usersGraphQL",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,16 @@
     "precommit": "lint-staged",
     "test": "lint-staged && eslint ."
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Andy Chen",
+    "email": "amazingandyyy@gmail.com",
+    "url": "https://amazingandyyy.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amazingandyyy/usersGraphQL"
+  },
+  "license": "MIT",
   "dependencies": {
     "express": "^4.15.3",
     "express-graphql": "^0.6.5",
