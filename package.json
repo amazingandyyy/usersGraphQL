@@ -62,6 +62,7 @@
   },
   "travis": {
     "language": "node_js",
+    "node_js": "node",
     "notifications": {
       "email": {
         "on_success": true,
