@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const UserType = new GraphQLObjectType({
   name: 'User',
-  fields: () => ({
+  fields: {
     id: {
       type: GraphQLString
     },
@@ -18,28 +18,28 @@ const UserType = new GraphQLObjectType({
     age: {
       type: GraphQLInt
     }
-  })
+  }
 });
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
-    type: UserType,
-    args: {
-      id: {
-        type: GraphQLString
+    user: {
+      type: UserType,
+      args: {
+        id: {
+          type: GraphQLString
+        }
+      },
+      resolve(parentValue, args) {
+        return axios
+          .get(`http://localhost:3000/users/${args.id}`)
+          .then(res => res.data);
       }
-    },
-    resolve(parentValue, args) {
-      return axios
-        .get(`http://localhost:3000/users/${args.id}`)
-        .then(res => res.data);
     }
   }
 });
 
-const schema = new GraphQLSchema({
-  query: RootQuery
-});
+const schema = new GraphQLSchema({ query: RootQuery });
 
 export default schema;
