@@ -88,7 +88,7 @@ const RootQuery = new GraphQLObjectType({
 
 const mutation = new GraphQLObjectType({
   name: 'Mutation',
-  field: {
+  fields: {
     addUser: {
       type: UserType,
       args: {
@@ -102,14 +102,13 @@ const mutation = new GraphQLObjectType({
           type: GraphQLString
         }
       },
-      resolve(parentValue, { firstName, age }) {
+      resolve(parentValue, { firstName, age, companyId }) {
         return axios
-          .post(`http://localhost:3000/users`, { firstName, age })
+          .post('http://localhost:3000/users', { firstName, age, companyId })
           .then(res => res.data);
       }
     }
   }
 });
 
-const schema = new GraphQLSchema({ query: RootQuery, mutation });
-export default schema;
+export default new GraphQLSchema({ query: RootQuery, mutation });
