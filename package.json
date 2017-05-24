@@ -1,7 +1,7 @@
 {
   "name": "users-graphgl",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "A demonstration of how graphQL work.",
   "main": "index.js",
   "scripts": {
     "dev": "babel-watch server.js",
